@@ -61,7 +61,7 @@ const readOne = async (req, res, next) => {
         const result = await db.query(selectWhere, [idAsig]);
         if (result.rows.length === 0) {
             return res.status(404).json({
-                message: msgNotFound('obtener', 'id_alumno', idAisg)
+                message: msgNotFound('obtener', 'id_curso', idAisg)
             });
         } //else
         res.json(result.rows[0]);
