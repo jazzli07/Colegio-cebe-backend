@@ -2,7 +2,7 @@
 *? SENTENCIAS SQL
 */
 //
-const table = 'asignacionesCC';
+const table = 'asignacionCC';
 const pk = 'idAsig';
 // 
 const insertInto = 

@@ -10,7 +10,7 @@ const {
     uptadeWhere,
     deleteWhere,
     msgNotFound
-} = require("../sql/asignacionesCC.sql");
+} = require("../sql/asignacionCC.sql");
 
 const create = async (req, res, next) => {
     try {
