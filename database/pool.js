@@ -7,12 +7,10 @@ const pool = new Pool({
     host: db.host,
     port: db.port,
     database: db.database,
-    dialectOptions: {
         ssl: {
-          require: true,
           rejectUnauthorized: false // <<<<<<< YOU NEED THIS
         }
-    }
+    
 });
 module.exports = pool;
 
