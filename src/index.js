@@ -18,6 +18,7 @@ const aulas = require('./routes/aulas.routes');
 const cursos = require('./routes/cursos.routes');
 const admins = require('./routes/administradores.routes');
 const docentes = require('./routes/docentes.routes');
+const alumnos = require('./routes/alumnos.routes');
 
 
 //* Complementan funcionalidad de express
@@ -39,6 +40,7 @@ app.use(aulas);
 app.use(cursos);
 app.use(admins);
 app.use(docentes);
+app.use(alumnos);
 
 //* Esta es la funcion Next() usada para manejar errores en los controladores
 app.use((err, req, res, next) =>{
