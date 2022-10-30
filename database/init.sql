@@ -180,3 +180,53 @@ INSERT INTO cursos(nombre, descripcion) VALUES
 ('MATEMÁTICA III', 'DESCRIPCIÓN MATEMÁTICA III'),
 ('FÍSICA III', 'DESCRIPCIÓN FÍSICA III'),
 ('QUÍMICA III', 'DESCRIPCIÓN QUÍMICA III');
+
+--* INICIO - ASIGNACIONES CURSOS A DOCENTES
+
+DROP TABLE IF EXISTS asignacionCC;
+CREATE TABLE asignacionCC(
+    id_asignacionCC SERIAL PRIMARY KEY,
+    id_curso SMALLINT NOT NULL DEFAULT 0,
+    id_docente SMALLINT NOT NULL DEFAULT 0,
+    id_aula SMALLINT NOT NULL DEFAULT 0,
+    id_horario SMALLINT NOT NULL DEFAULT 0,
+    CONSTRAINT fk_aula FOREIGN KEY(id_aula) REFERENCES aulas(id_aula), 
+	CONSTRAINT fk_curso FOREIGN KEY(id_curso) REFERENCES cursos(id_curso), 
+	CONSTRAINT fk_docente FOREIGN KEY(id_docente) REFERENCES docentes(id_docente), 
+	CONSTRAINT fk_horario FOREIGN KEY(id_horario) REFERENCES horarios (id_horario) 
+	
+);
+
+
+--* INSERTANDO DATOS DE PRUEBA
+INSERT INTO asignacionCC(id_curso, id_docente, id_aula, id_horario) VALUES
+(1,1,1,1),
+(1,2,3,3)
+--* FIN - Asignaciones
+
+DROP TABLE IF EXISTS horarios;
+CREATE TABLE horarios(
+    id_horario SERIAL PRIMARY KEY,
+    inicio_fin CHAR(13) UNIQUE NOT NULL -- '07:00 - 07:35' = 13
+);
+
+INSERT INTO horarios(inicio_fin) VALUES
+('07:00 - 07:35'), 
+('07:40 - 08:15'),
+('08:20 - 08:55'),
+('09:00 - 09:35'), 
+('09:40 - 10:15'), 
+('10:20 - 10:55'), 
+('11:00 - 11:35'),
+('11:40 - 12:15'),
+('12:20 - 12:55'),
+('13:00 - 13:35'),
+('13:40 - 14:15'),
+('14:20 - 14:55'),
+('15:00 - 15:35'),
+('15:40 - 16:15'),
+('16:20 - 16:55'),
+('17:00 - 17:35'),
+('17:40 - 18:15');
+
+--* FINAL - HORARIOS
