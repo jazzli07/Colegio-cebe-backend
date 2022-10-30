@@ -8,9 +8,6 @@ module.exports = {
         host: 'ec2-3-220-207-90.compute-1.amazonaws.com',
         port: 5432,
         database: 'd45hd1v6900g43',
-            ssl: {
-              rejectUnauthorized: false // <<<<<<< YOU NEED THIS
-            }
     
 }
 }
